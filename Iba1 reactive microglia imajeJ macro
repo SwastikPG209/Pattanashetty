@@ -1,0 +1,20 @@
+//Title and Split Channels
+title=getTitle()
+c2Title = "C2-" + title;
+c2MaskTitle = "Mask of C2-" + title;
+run("Split Channels");
+
+
+
+//Channel 2 (green)
+selectWindow( "C2-" + title);
+run("Restore Selection");
+getStatistics(area, mean, min, max, std);
+thresh2 = mean + 2*std;
+/*Define min for intensity threshold*/
+setThreshold(thresh2, 65536);
+run("Analyze Particles...", "size=80-infinity circularity=0.5-0.69 summarze show=Masks display summarize");
+
+
+/*End of Channel2*/
+//Increasing thresh is less selective
