@@ -2,11 +2,7 @@
 //Title and Split Channels
 title=getTitle()
 c1Title = "C1-" + title; 
-c2Title = "C2-" + title;
-c3Title = "C3-" + title;
 c1MaskTitle = "Mask of C1-" + title;
-c2MaskTitle = "Mask of C2-" + title;
-c3MaskTitle = "Mask of C3-" + title;
 run("Split Channels");
 
 
